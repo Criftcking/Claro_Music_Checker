@@ -7,7 +7,11 @@ colorama.init()
 import os
 import sys
 
-
+def limpiar():
+        if os.name == 'nt':  # Windows
+            os.system('cls')
+        else:  # Linux/Unix/Mac
+            os.system('clear')
 
 def initi():
     def check(email,password):
@@ -89,7 +93,7 @@ var = print(Fore.YELLOW + '[1]-Iniciar\n[2]-Salir')
 valor1 = int(input(Fore.BLUE + 'Opcion: >'))
 
 if valor1 == 1:
-    os.system('cls')
+    limpiar()
     initi()
 else:
     pass
